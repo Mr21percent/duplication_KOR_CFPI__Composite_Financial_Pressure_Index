@@ -1,2 +1,6 @@
 streamlit
 pandas
+datetime
+scipy
+requests
+plotly
