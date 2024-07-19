@@ -260,7 +260,7 @@ if check_crisis:
                 'is_crisis', 
                 level = 0.5, 
                 mode = 'above', 
-                fillcolor = 'rgba(200, 0, 0, 0.2)', 
+                fillcolor = 'rgba(200, 0, 0, 0.7)', 
                 layer ='below')
 
 st.plotly_chart(main_fig, use_container_width=True)
