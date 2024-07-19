@@ -4,3 +4,4 @@ datetime
 scipy
 requests
 plotly
+lxml 
