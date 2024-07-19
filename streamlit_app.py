@@ -23,7 +23,7 @@ crisis_range = 2.5
 # st.secrets['krx_api_key']
 
 # cache를 통한 data 1회 연산
-@st.cache_resource ( ttl = 14400)
+@st.cache_resource ( ttl = 28800)
 def calc_cfpi():
     
     # 현재 시간 체크
@@ -140,7 +140,6 @@ def calc_cfpi():
     return CFPI, 은행부문압력지수, 채권주식부문압력지수, 외환부문압력지수
 
 
-CFPI, 은행부문압력지수, 채권주식부문압력지수, 외환부문압력지수  = calc_cfpi()
 
 def bgLevels(fig, df, variable, level, mode, fillcolor, layer):
     """
@@ -188,6 +187,9 @@ def bgLevels(fig, df, variable, level, mode, fillcolor, layer):
 
 io.renderers.default='browser' #이거 해야 ploty 실시간 확인 가능 fig.show()가 인터넷 창에
 
+
+with st.spinner('데이터를 불러오고 있는 중입니다. 10분 이상 소요될 수 도 있습니다...'):
+    CFPI, 은행부문압력지수, 채권주식부문압력지수, 외환부문압력지수  = calc_cfpi()
 
 st.markdown( '''
             이 페이지는 BOK 이슈노트 [제2024-11호] [데이터 기반 금융·외환 조기경보모형](https://www.bok.or.kr/portal/bbs/P0002353/view.do?nttId=10083742&searchCnd=1&searchKwd=&depth2=201156&depth3=200433&depth=200433&pageUnit=10&pageIndex=1&programType=newsData&menuNo=200433&oldMenuNo=200433)에서 소개된 **복합 금융 압력 지수 (CFPI)** 를 산출하여 나타내는 페이지 입니다. 
