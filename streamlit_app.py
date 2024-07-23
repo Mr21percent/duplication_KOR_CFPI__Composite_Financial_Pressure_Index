@@ -278,6 +278,7 @@ full_df = pd.concat([
     은행부문압력지수,
     ], axis = 1 )
 full_df.columns = ['CFPI', '외환부문압력지수', '채권주식부분압력지수', '은행부문압력지수']
+#st.dataframe(  full_df,)
 
 
 # 차트
