@@ -235,14 +235,15 @@ def bgLevels(fig, df, variable, level, mode, fillcolor, layer):
 
 io.renderers.default='browser' #이거 해야 ploty 실시간 확인 가능 fig.show()가 인터넷 창에
 
-
 st.markdown( '''
             이 페이지는 BOK 이슈노트 [제2024-11호] [데이터 기반 금융·외환 조기경보모형](https://www.bok.or.kr/portal/bbs/P0002353/view.do?nttId=10083742&searchCnd=1&searchKwd=&depth2=201156&depth3=200433&depth=200433&pageUnit=10&pageIndex=1&programType=newsData&menuNo=200433&oldMenuNo=200433)에서 소개된 **복합 금융 압력 지수 (CFPI)** 를 산출하여 나타내는 페이지 입니다. 
             일부 변수들의 수정을 거쳐 일별로 산출이 가능하도록 수정하였습니다. 오류나 개선 사항은 woneunglee@hanyang.ac.kr로 연락주시면 수정하겠습니다.
             ''')
 
+st.text(datetime.now(timezone(timedelta(hours=9))).strftime("%Y%m%d"))
 
 st.title(" 복합 금융 압력 지수 (CFPI)")
+
 st.markdown( '''
 
 조기경보 대상 이벤트가 실제 위기로 이어진 것인지 아니면 시장불안에 불과한지에 대한 컨센서스가 형성되기 어렵고, 그 위기가 언제 시작되었는지 특정하기도 어렵다.
