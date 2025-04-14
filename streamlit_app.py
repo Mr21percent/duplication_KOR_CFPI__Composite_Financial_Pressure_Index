@@ -51,6 +51,7 @@ def calc_cfpi():
     
     time = datetime.now(timezone(timedelta(hours=9)))
     data_date = (time - timedelta(1)).date()
+    data_date = (time).date()
         
     if (data_date.isoweekday() <= 5) and (cur_krx은행_df.index.max().date() < data_date) :
         start_date = cur_krx은행_df.index.max().date() + timedelta(1) 
